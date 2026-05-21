@@ -20,5 +20,4 @@ RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir -e . sqlalchemy aiosqlite newspaper4k lxml_html_clean
 RUN playwright install --with-deps chromium
 
-CMD ["python", "-m", "news_room_bot"]
-~                                    
+CMD ["python", "-m", "news_room_bot"]                               
