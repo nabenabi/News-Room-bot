@@ -16,10 +16,8 @@ RUN apt-get update && apt-get install -y \
 
 COPY . ./
 
-RUN pip install --no-cache-dir --upgrade pip
-RUN pip install --no-cache-dir -e .
-
-RUN pip install --no-cache-dir sqlalchemy aiosqlite newspaper4k lxml_html_clean
+RUN pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir -e . sqlalchemy aiosqlite newspaper4k lxml_html_clean
 RUN playwright install --with-deps chromium
 
 CMD ["python", "-m", "news_room_bot"]
